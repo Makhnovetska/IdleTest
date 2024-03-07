@@ -1,0 +1,5 @@
+/Users/ruslan/Documents/GitHub/IdleTest/.utmp/RelWithDebInfo/2m2c6b47/armeabi-v7a/CMakeFiles/edit_cache.dir
+/Users/ruslan/Documents/GitHub/IdleTest/.utmp/RelWithDebInfo/2m2c6b47/armeabi-v7a/CMakeFiles/rebuild_cache.dir
+/Users/ruslan/Documents/GitHub/IdleTest/.utmp/RelWithDebInfo/2m2c6b47/armeabi-v7a/FramePacing/CMakeFiles/swappywrapper.dir
+/Users/ruslan/Documents/GitHub/IdleTest/.utmp/RelWithDebInfo/2m2c6b47/armeabi-v7a/FramePacing/CMakeFiles/edit_cache.dir
+/Users/ruslan/Documents/GitHub/IdleTest/.utmp/RelWithDebInfo/2m2c6b47/armeabi-v7a/FramePacing/CMakeFiles/rebuild_cache.dir
