@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Controllers.Player
@@ -7,18 +6,27 @@ namespace Controllers.Player
     {
         [SerializeField] private int _capacity = 3;
         public int capacity => _capacity;
+        public int count { get; private set; }
+        public bool isFull => count >= _capacity;
+        public bool isEmpty => count == 0;
 
-        private readonly List<LootController> _items = new();
-        public IReadOnlyList<LootController> items => _items;
-        
-        public bool isFull => _items.Count >= _capacity;
-        
-        public void AddLoot(LootController loot)
+        public void AddLoot()
         {
-            if (_items.Count < _capacity)
+            if (count < _capacity)
             {
-                _items.Add(loot);
+                count++;
             }
+        }
+
+        public bool TryRemoveLoot(int count = 1)
+        {
+            if (this.count >= count)
+            {
+                this.count -= count;
+                return true;
+            }
+
+            return false;
         }
     }
 }

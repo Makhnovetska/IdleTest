@@ -1,3 +1,4 @@
+using Controllers.Loot;
 using Utils;
 
 namespace Controllers.Player.States
