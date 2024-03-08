@@ -21,7 +21,7 @@ namespace Controllers.Player.States
 
         public override void OnExit()
         {
-            _owner.transform.LookAt(Vector3.right);
+            _owner.transform.LookAt(_owner.transform.position + Vector3.right);
         }
 
         public override void OnUpdate()

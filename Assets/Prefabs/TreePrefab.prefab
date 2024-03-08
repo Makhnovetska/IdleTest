@@ -155,7 +155,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _health: 3
   _dropLootCount: 3
-  _dropRadius: 3
+  _dropRadius: 4
 --- !u!1 &4893686076378074915
 GameObject:
   m_ObjectHideFlags: 0

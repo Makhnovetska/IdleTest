@@ -24,11 +24,8 @@ namespace Controllers.Player
                 LootController loot = FactoryService.instance.lootFactory.Create();
                 _lootItems.Add(loot);
                 loot.isPickedUp = true;
-                loot.transform.SetParent(_lootPoint);
-                loot.transform.localPosition = new Vector3(
-                    0,
-                    0.5f + 0.5f * count,
-                    0);
+                loot.transform.SetParent(_lootPoint, false);
+                loot.transform.localPosition = GetLootPosition(count, true);
             }
         }
 
@@ -46,6 +43,20 @@ namespace Controllers.Player
             }
 
             return false;
+        }
+        
+        public Vector3 GetLootPosition(int count, bool isLocalPosition = false)
+        {
+            Vector3 localPos = new Vector3(0, 0.4f * (count - 1), 0);
+            if (isLocalPosition)
+                return localPos;
+            
+            return _lootPoint.position + localPos;
+        }
+        
+        public Vector3 GetLootRotation()
+        {
+            return _lootPoint.rotation.eulerAngles;
         }
     }
 }
