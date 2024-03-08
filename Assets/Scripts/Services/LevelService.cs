@@ -64,13 +64,13 @@ namespace Services
 
             Vector3 GetDeltaPosition()
             {
-                return new Vector3(Random.value * radius, center.y, Random.value * radius);
+                return new Vector3(center.x + Random.value * radius, center.y,  center.z + Random.value * radius);
             }
             
             bool IsPositionValid(Vector3 position)
             {
                 IEnumerable<Transform> treesTransforms = FactoryService.instance.treesFactory.instances.Select(t => t.transform);
-                return treesTransforms.All(t => Vector3.Distance(t.position, position) > 1.0f);
+                return treesTransforms.All(t => Vector3.Distance(t.position, position) > 4.0f);
             }
         }
 
