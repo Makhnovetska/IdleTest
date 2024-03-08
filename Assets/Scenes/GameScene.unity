@@ -441,7 +441,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _housePrefab: {fileID: 1571086933703528053, guid: af25ca5351ff74253bdcd662fd04e787, type: 3}
-  _playerPrefab: {fileID: 7239402456872553861, guid: 042a02e8c104c4503a48fe802b3688f6, type: 3}
+  _playerPrefab: {fileID: 8568140977205017039, guid: b4bdfe13a37534f6cbfe2950942283e4, type: 3}
 --- !u!1 &876168215
 GameObject:
   m_ObjectHideFlags: 0

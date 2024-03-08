@@ -5,7 +5,7 @@ namespace Controllers.Player.States
 {
     public class ChopState : State<PlayerController>
     {
-        private readonly float _chopInterval = 1.0f;
+        private readonly float _chopInterval = 0.85f;
         
         private TreeController _tree;
         private float _chopTimer;

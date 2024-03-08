@@ -8,6 +8,7 @@ namespace Controllers
         
         public override void DoStep(Vector3 direction)
         {
+            transform.LookAt(transform.position + direction);
             transform.position += direction * (_speed * Time.deltaTime);
         }
     }

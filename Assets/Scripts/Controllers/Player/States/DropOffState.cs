@@ -16,12 +16,12 @@ namespace Controllers.Player.States
 
         public override void OnEnter()
         {
-            
+            _owner.anim.SetDropOff();
         }
 
         public override void OnExit()
         {
-            
+            _owner.transform.LookAt(Vector3.right);
         }
 
         public override void OnUpdate()

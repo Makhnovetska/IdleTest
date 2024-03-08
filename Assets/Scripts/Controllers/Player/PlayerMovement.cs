@@ -9,7 +9,7 @@ namespace Controllers
         public bool IsPlayerNear(Vector3 position)
         {
             float distance = Vector3.Distance(transform.position, position);
-            return distance < 1.0f;
+            return distance < 1.5f;
         }
     }
 }
