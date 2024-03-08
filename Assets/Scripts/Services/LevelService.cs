@@ -1,9 +1,9 @@
 using System.Collections.Generic;
+using System.Linq;
 using Controllers;
 using Controllers.Loot;
 using Services.GameFactory;
 using UnityEngine;
-using Utils;
 
 namespace Services
 {
@@ -49,15 +49,28 @@ namespace Services
         {
             for (int i = 0; i < count; i++)
             {
-                Vector3 position = new Vector3(
-                    Random.value * radius,
-                    center.y,
-                    Random.value * radius);
+                bool isPositionValid = false;
+                Vector3 position = Vector3.zero;
                 
-                TreeController tree = FactoryService.instance.treesFactory
-                    .Create();
+                while (!isPositionValid)
+                {
+                    position = GetDeltaPosition();
+                    isPositionValid = IsPositionValid(position);
+                }
                 
+                TreeController tree = FactoryService.instance.treesFactory.Create();
                 tree.transform.position = position;
+            }
+
+            Vector3 GetDeltaPosition()
+            {
+                return new Vector3(Random.value * radius, center.y, Random.value * radius);
+            }
+            
+            bool IsPositionValid(Vector3 position)
+            {
+                IEnumerable<Transform> treesTransforms = FactoryService.instance.treesFactory.instances.Select(t => t.transform);
+                return treesTransforms.All(t => Vector3.Distance(t.position, position) > 1.0f);
             }
         }
 

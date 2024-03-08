@@ -2,7 +2,6 @@ using Controllers;
 using Controllers.Player;
 using Controllers.Player.States;
 using UnityEngine;
-using UnityEngine.Serialization;
 using Utils;
 
 public class PlayerController : MonoBehaviour

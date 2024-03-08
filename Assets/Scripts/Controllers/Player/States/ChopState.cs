@@ -37,9 +37,7 @@ namespace Controllers.Player.States
             }
             
             if (_tree.health <= 0)
-            {
                 _owner.behavior.ChangeState(new IdleState(_owner));
-            }
         }
         
         private void Chop()

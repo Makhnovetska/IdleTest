@@ -26,10 +26,8 @@ namespace Controllers.Player.States
             Vector3 direction = Vector3.Normalize(_targetPos - _owner.transform.position);
             _owner.movement.DoStep(direction);
             
-            if (Vector3.Distance(_owner.transform.position, _targetPos) < 0.5f)
-            {
+            if (_owner.movement.IsPlayerNear(_targetPos))
                 _owner.behavior.ChangeState(new IdleState(_owner));
-            }
         }
     }
 }

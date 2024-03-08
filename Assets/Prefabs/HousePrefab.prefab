@@ -257,6 +257,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d9f2eb4f9254835b2fc88d46abd479d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _builtMat: {fileID: 2100000, guid: 8ac88566c9dd241e2b645a169fa471fd, type: 2}
+  _lockedMat: {fileID: 2100000, guid: 153d9b135784c480d90444a31c021753, type: 2}
+  _partsMeshes:
+  - {fileID: 4797026577254355167}
+  - {fileID: 6358769715260206022}
+  - {fileID: 5191194695358375021}
 --- !u!1 &8793319412215932790
 GameObject:
   m_ObjectHideFlags: 0

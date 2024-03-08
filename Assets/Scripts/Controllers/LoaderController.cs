@@ -12,7 +12,6 @@ namespace Controllers
         {
             LevelService.instance.CreateHouse(_housePrefab);
             LevelService.instance.CreatePlayer(_playerPrefab);
-            LevelService.instance.CreateTrees(5, Vector3.zero, 20f);
         }
     }
 }

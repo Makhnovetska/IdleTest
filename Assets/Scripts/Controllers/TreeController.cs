@@ -8,23 +8,24 @@ namespace Controllers
     public class TreeController : MonoBehaviour, IPlayerTarget
     {
         [SerializeField] private int _health = 3;
+        [SerializeField] private int _dropLootCount = 3;
+        [SerializeField] private float _dropRadius = 3.0f;
         public int health => _health;
         
         public void Chop()
         {
             _health--;
-            Debug.Log("Chopping tree");
 
             if (_health <= 0)
             {
-                for (int i = 0; i < 3; i++)
+                for (int i = 0; i < _dropLootCount; i++)
                 {
-                    Vector3 randomPosition = new Vector3(
-                        Random.value * 10,
-                        transform.position.y,
-                        Random.value * 10);
+                    Vector3 randomDelta = new Vector3(
+                        Random.Range(-_dropRadius, _dropRadius),
+                        0.0f,
+                        Random.Range(-_dropRadius, _dropRadius));
                     
-                    LevelService.instance.DropLoot(randomPosition);
+                    LevelService.instance.DropLoot(transform.position + randomDelta);
                     FactoryService.instance.treesFactory.Destroy(this);
                 }
             }
